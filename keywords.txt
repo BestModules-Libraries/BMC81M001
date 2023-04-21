@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For BMC81M001
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+BMC81M001	KEYWORD1	
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+# methods names in commond
+connectToAP	KEYWORD2
+connectTCP	KEYWORD2
+writeDataTcp	KEYWORD2
+readDataTcp	KEYWORD2
+connectAliyunIot	KEYWORD2
+setTopic	KEYWORD2
+writeStringAliyun	KEYWORD2
+writeBytesAliyun	KEYWORD2
+readIotDataAliyun	KEYWORD2
+reset	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
+BMC81M001_baudRate	LITERAL1
+SEND_SUCCESS	LITERAL1
+SEND_FAIL	LITERAL1
+RES_MAX_LENGTH	LITERAL1
