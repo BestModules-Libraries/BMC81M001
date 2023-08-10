@@ -26,7 +26,8 @@ Version History
 -------------------
 
 * **V1.0.1** - Initial public release.
-
+* **V1.0.2** - Add： examples 4 and 5
+  
 License Information
 -------------------
 
