@@ -25,8 +25,12 @@ Documentation
 Version History  
 -------------------
 
-* **V1.0.1** - Initial public release.
-* **V1.0.2** - Add： examples 4 and 5.
+* **V1.0.1**
+&emsp;&emsp; - Initial public release.
+* **V1.0.2**
+&emsp;&emsp; - Add： examples 4 and 5.
+* **V1.0.3**
+&emsp;&emsp; - Add： Change the wiring of the example 'ThingSpeakPublish' ;Change the pictures(layout and schematic) of the examples 'ThingSpeakPublish' and 'ThingSpeakSubscribe'.
   
 License Information
 -------------------
