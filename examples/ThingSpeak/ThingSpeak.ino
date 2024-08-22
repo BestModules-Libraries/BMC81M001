@@ -10,8 +10,7 @@ BMC81M001       Wifi(&Serial1);  //Please uncomment out this line of code if you
 //BMC81M001     Wifi(&Serial4);  //Please uncomment out this line of code if you use HW Serial4 on BMduino
 
 void setup() 
-{
-  digitalWrite(LED, LOW);                      
+{                    
   Serial.begin(9600);                                
   Wifi.begin();
   Wifi.reset(); 
@@ -28,7 +27,6 @@ void setup()
   }
   else {Serial.println("success");}
   delay(200);
-
 }
 void loop() 
 { 
@@ -38,26 +36,12 @@ void loop()
         Serial.println(ReciveBufflen);
         Serial.println(ReciveBuff);
     }
-    while (Serial.available() > 0)
-    {
-      SerialBuff[resLen++] = Serial.read();
-      delay(10);
-    }
-    if(resLen>0)
-    {
-      digitalWrite(LED, HIGH);
       DATA_BUF = "field1="; 
-      DATA_BUF += SerialBuff; 
+      DATA_BUF += "100"; 
       topic = PUBLISHTOPIC;
-      if(Wifi.writeString(DATA_BUF,topic))
-      {
-        Serial.println("Send String data sucess");
-      }
-      clearBuff();
-      digitalWrite(LED, LOW);
+    if(Wifi.writeString(DATA_BUF,topic))
+    {
+    Serial.println("Send String data sucess");
     }
+    delay(2000);
 }  
-void clearBuff(){
-  memset(SerialBuff,'\0',RES_MAX_LENGTH);
-  resLen = 0;
-}

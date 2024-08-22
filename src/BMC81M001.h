@@ -1,10 +1,9 @@
 /*************************************************
 File:             BMC81M001.h
-Author:           BESTMODULES
-Description:      Define classes and required variables
-Version:          V1.0.3   --2023-12-20
+Author:           BEST MODULES CORP.
+Description:      Define classes and required variables 
+version:          V1.0.4-2024-8-22
 **************************************************/
-
 #ifndef _BMC81M001_H_
 #define _BMC81M001_H_
 
@@ -17,6 +16,7 @@ Version:          V1.0.3   --2023-12-20
 #define SEND_FAIL 0
 
 #define RES_MAX_LENGTH 200
+
 
 /*! Subclassing Print makes debugging easier -- output en route to ESP8266 module
  * can be duplicated on a second stream (e.g. Serial). !*/
@@ -39,6 +39,7 @@ class BMC81M001
       void readIotData(String *ReciveBuff,int *ReciveBufflen,String *topic);
       bool reset(void);
       int  sendATCommand(String StringstrCmd,int timeout,uint8_t reTry);
+      String  OneNetReciveBuff;
       
   private:
       char BMC81M001Response[RES_MAX_LENGTH];
@@ -54,6 +55,7 @@ class BMC81M001
 
 enum
 {
+  
   RST_Fail=1,
   Init_Fail,
   Station_Fail,

@@ -1,10 +1,9 @@
 /*************************************************
 File:             BMC81M001.cpp
-Author:           BESTMODULES
+Author:           BEST MODULES CORP.
 Description:      UART communication with the BMC81M001 
-Version:          V1.0.3   --2023-12-20
+version:          V1.0.4-2024-8-22
 **************************************************/
-
 #include "BMC81M001.h"
 
 /**********************************************************
@@ -193,7 +192,7 @@ String  BMC81M001::readDataTcp()
 }
 /**********************************************************
 Description: Configure MQTT parameters
-Parameters:  clientlidã€usernameã€passwordã€mqtt_hostã€server_port      
+Parameters:  clientlid?username?password?mqtt_host?server_port      
 Return:      Communication status  1:SEND_Success 0:SEND_FAIL  
 Others:        
 **********************************************************/
@@ -385,7 +384,7 @@ bool BMC81M001::writeBytes(char Dbuffer[],int Dlength,String topic)
 /**********************************************************
 Description: read data from module connect TCP server
 Parameters:  IotReciveBuffï¼šStoring String data  
-             IotReciveBufflenï¼š    String length 
+             IotReciveBufflenï¼?   String length 
              topicï¼šdata form topic
 Return:      
 Others:        
@@ -424,7 +423,8 @@ void BMC81M001::readIotData(String *IotReciveBuff,int *IotReciveBufflen,String *
     {
       if(strstr(BMC81M001Response, "+MQTTSUBRECV") != NULL)
       {
-        S_Dbuffer = BMC81M001Response;
+        S_Dbuffer = BMC81M001Response;  
+        OneNetReciveBuff=S_Dbuffer;  
         do
         { 
           commaPosition = S_Dbuffer.indexOf('"');
@@ -442,8 +442,9 @@ void BMC81M001::readIotData(String *IotReciveBuff,int *IotReciveBufflen,String *
               S_Dbuffer = S_Dbuffer.substring(commaPosition+1, S_Dbuffer.length());
               S_Dbuffer1 =S_Dbuffer;
             }
-          }       
-         }while(commaPosition >=0); 
+          }    
+         }
+         while(commaPosition >=0); 
           S_Dbuffer = S_Dbuffer.substring(commaPosition+2, S_Dbuffer.length());
          for (uint8_t i=0;i<(S_Dbuffer.length()-2);i++)
          {
