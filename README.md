@@ -34,7 +34,7 @@ Version History
 * **V1.0.4**
 &emsp;&emsp; - Perfect example(Aliyun_Iot);  
 &emsp;&emsp; - Add example(ONENET);  
-&emsp;&emsp; - Changed the picture in examples;
+&emsp;&emsp; - Changed the picture in examples;  
 License Information
 -------------------
 
