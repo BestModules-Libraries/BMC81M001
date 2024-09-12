@@ -28,13 +28,15 @@ Version History
 * **V1.0.1**  
 &emsp;&emsp;- Initial public release.
 * **V1.0.2**  
-&emsp;&emsp;- Add： examples 4 and 5.
+&emsp;&emsp;- Add examples(ThingSpeakPublish,ThingSpeakSubscribe).
 * **V1.0.3**  
-&emsp;&emsp;- Add： examples 6. 
+&emsp;&emsp;- Change the wiring of the example(ThingSpeakPublish);  
+&emsp;&emsp;- Change the pictures(layout and schematic) of the examples (ThingSpeakPublish,ThingSpeakSubscribe).
 * **V1.0.4**  
 &emsp;&emsp;- Perfect example(Aliyun_Iot);  
 &emsp;&emsp;- Add example(ONENET);  
 &emsp;&emsp;- Changed the picture in examples;
+
 License Information
 -------------------
 

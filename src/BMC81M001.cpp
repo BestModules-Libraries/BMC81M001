@@ -8,7 +8,7 @@ version:          V1.0.4-2024-8-22
 
 /**********************************************************
 Description: Constructor
-Parameters:  *theSerialï¼šhardware serial 
+Parameters:  *theSerialšhardware serial 
              BMduino optional:serial(default) serial1/seria2/seria3/seria4
              UNO optional:serial(default)
 Return:      none     
@@ -110,7 +110,7 @@ bool BMC81M001::connectTCP( String ip,  int port)
 /**********************************************************
 Description: Send data to TCP server
 Parameters:  Dlength: data length
-             *Dbuffer : Storing Data        
+             Dbuffer[] : Storing Data        
 Return:      Communication status  1:SEND_Success 0:SEND_FAIL  
 Others:        
 **********************************************************/
@@ -383,9 +383,9 @@ bool BMC81M001::writeBytes(char Dbuffer[],int Dlength,String topic)
 }
 /**********************************************************
 Description: read data from module connect TCP server
-Parameters:  IotReciveBuffï¼šStoring String data  
-             IotReciveBufflenï¼?   String length 
-             topicï¼šdata form topic
+Parameters:  IotReciveBuffšStoring String data  
+             IotReciveBufflen   String length 
+             topicšdata form topic
 Return:      
 Others:        
 **********************************************************/
@@ -496,7 +496,7 @@ bool BMC81M001::reset(void)
 Description: Send AT command  to moudle
 Parameters:  StringstrCmd:AT command
              *response :receiving the response indicates success
-             timeoutï¼šResend message after timeout
+             timeoutšResend message after timeout
              reTry :retransmission number      
 Return:      Communication status  1:SEND_Success 0:SEND_FAIL  
 Others:        
