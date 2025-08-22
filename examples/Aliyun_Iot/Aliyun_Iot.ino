@@ -29,7 +29,6 @@ void setup() {
     Serial.println("fail");
   } else {
     Serial.println("success");
-    Wifi.setPublishTopic(PUBLISHTOPIC);
     Wifi.setSubscribetopic(SUBSCRIBERTOPIC);
   }
   Serial.print("Topic set Results：");

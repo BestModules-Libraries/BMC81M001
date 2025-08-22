@@ -2,7 +2,7 @@
 File:             BMC81M001.h
 Author:           BEST MODULES CORP.
 Description:      Define classes and required variables 
-version:          V1.0.4-2024-8-22
+version:          V1.0.5  -2025-07-21
 **************************************************/
 #ifndef _BMC81M001_H_
 #define _BMC81M001_H_
@@ -14,8 +14,21 @@ version:          V1.0.4-2024-8-22
 #define BMC81M001_baudRate 115200
 #define SEND_SUCCESS 1
 #define SEND_FAIL 0
+#define  COMMUNICAT_ERROR -1
+#define  AT_ACK_ERROR -2
+//----------------------wifi status---------------------------
+#define  WIFI_STATUS_GOT_IP  2
+#define  WIFI_STATUS_CONNETED  3
+#define  WIFI_STATUS_DISCONNETED  4
+#define  WIFI_STATUS_NO_CONNET  5
+//----------------------wifi status---------------------------
+#define HTTP_GET_BEGIN_SUCCESS 0
+#define HTTP_GET_OP_SUCCESS 0
+#define HTTP_GET_URL_ERROR -1
+#define HTTP_GET_OP_TIMEOUT -2
 
-#define RES_MAX_LENGTH 200
+
+#define RES_MAX_LENGTH 1000
 
 
 /*! Subclassing Print makes debugging easier -- output en route to ESP8266 module
@@ -31,26 +44,46 @@ class BMC81M001
       bool writeDataTcp(int Dlength,char Dbuffer[]);
       String readDataTcp();
       bool configMqtt(String clientid,String username,String password,String mqtt_host,int server_port);
-      bool setPublishTopic(String publishtopic);
       bool setSubscribetopic(String subscribetopic);
-      bool setTopic(String topic);
       bool writeString(String Dbuffer,String topic);
       bool writeBytes(char Dbuffer[],int Dlength,String topic);
       void readIotData(String *ReciveBuff,int *ReciveBufflen,String *topic);
       bool reset(void);
       int  sendATCommand(String StringstrCmd,int timeout,uint8_t reTry);
-      String  OneNetReciveBuff;
-      
-  private:
+      int http_begin(String serverURL,int port,String subURL="");
+      int http_get(void);
+      String http_getString(void);
+      void http_end(void);
+      //-------------------------------------------------------------------
+      String sendATCmd(String StringstrCmd,int timeout,uint8_t reTry);
+      String SSID(void);
+      int getStatus(void);
+      String getSSID(void);
+      String getIP(void);
+      String getGateway(void);
+      String getMask(void);
+      String getMacAddress(void);
+      String getATVersion(void);
+      //-------------------------------------------------------------------
       char BMC81M001Response[RES_MAX_LENGTH];
       int resLength = 0;
+
+      String  OneNetReciveBuff;
+  private:
       uint16_t _rxPin;
       uint16_t _txPin;
       void readResponse(void);
       void clearResponse(char Debugbuffer[]);
       HardwareSerial *_serial = NULL;
       SoftwareSerial *_softSerial = NULL ;
-
+      //http get------------------------
+      String _host="Host: ";
+      int _port;
+      String _type;
+      String _url;
+      String _suburl;
+      int _len;
+      //--------------------------------
 };
 
 enum

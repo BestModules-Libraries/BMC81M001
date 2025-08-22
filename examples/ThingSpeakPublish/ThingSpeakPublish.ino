@@ -32,7 +32,6 @@ void setup()
   }
   else {Serial.println("success");}
   delay(200);
-  Wifi.setPublishTopic(PUBLISHTOPIC);
   Wifi.setSubscribetopic(SUBSCRIBERTOPIC2);
   Wifi.setSubscribetopic(SUBSCRIBERTOPIC1);
   topic = PUBLISHTOPIC;

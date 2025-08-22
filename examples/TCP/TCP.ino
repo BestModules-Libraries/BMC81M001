@@ -6,8 +6,8 @@ Description: 1. Hardware serial port 1 is used for communication with BMC81M001,
              4. When serial port sends data, its data is directly transmitted through to TCP server
 ******************************************************************/
 #include "TCP.h"
-BMC81M001 Wifi(6,7);//rxPin 6 , txPin 7, Please comment out this line of code if you don't use software Serial
-//BMC81M001 Wifi(&Serial1);//Please uncomment out this line of code if you use HW Serial1 on BMduino
+//BMC81M001 Wifi(6,7);//rxPin 6 , txPin 7, Please comment out this line of code if you don't use software Serial
+BMC81M001 Wifi(&Serial1);//Please uncomment out this line of code if you use HW Serial1 on BMduino
 void setup() 
 {
   digitalWrite(LED, LOW);

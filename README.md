@@ -20,7 +20,7 @@ Repository Contents
 Documentation 
 -------------------
 
-* **[BMC81M001 Arduino Library Description]( https://www.bestmodulescorp.com/bmc81m001.html#tab-product2 )** - Arduino Library Description.
+* **[BMC81M001 Arduino Library Description]( https://www.bestmodulescorp.com/bmc81m001.html)** - Arduino Library Description.
 
 Version History  
 -------------------
@@ -36,6 +36,12 @@ Version History
 &emsp;&emsp;- Perfect example(Aliyun_Iot);  
 &emsp;&emsp;- Add example(ONENET);  
 &emsp;&emsp;- Changed the picture in examples;
+* **V1.0.5**  
+&emsp;&emsp;- Add base function:sendATCmd,SSID,getStatus,getIP,getGateway,getMask,getMacAddress,getATVersion;  
+&emsp;&emsp;- Add http function:http_begin,http_get,http_getString,http_end;  
+&emsp;&emsp;- Add example:Http get;  
+&emsp;&emsp;- Delete function:setPublishTopic,setTopic;  
+&emsp;&emsp;- Open AT return  data for user operation （BMC81M001Response）.
 
 License Information
 -------------------

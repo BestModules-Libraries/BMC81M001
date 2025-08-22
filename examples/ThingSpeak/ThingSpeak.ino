@@ -11,7 +11,7 @@ BMC81M001       Wifi(&Serial1);  //Please uncomment out this line of code if you
 
 void setup() 
 {                    
-  Serial.begin(9600);                                
+  Serial.begin(115200);                                
   Wifi.begin();
   Wifi.reset(); 
   Serial.print("WIFI Connection Results：");
